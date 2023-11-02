@@ -1,0 +1,86 @@
+[
+  {
+    "id": "kryuj3mq",
+    "newPost": true,
+    "user": "mark webber",
+    "avatar": "/avatar-mark-webber.webp",
+    "activity": "reacted to your recent post",
+    "referalPost": "My first tournament today!",
+    "referalGroup": "",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "1m ago"
+  },
+  {
+    "id": "4votyabh",
+    "newPost": true,
+    "user": "angela gray",
+    "avatar": "/avatar-angela-gray.webp",
+    "activity": "followed you",
+    "referalPost": "",
+    "referalGroup": "",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "5m ago"
+  },
+  {
+    "id": "rnym4ycl",
+    "newPost": true,
+    "user": "jacob thompson",
+    "avatar": "/avatar-jacob-thompson.webp",
+    "activity": "has joined your group",
+    "referalPost": "",
+    "referalGroup": "Chess Club",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "1 day ago"
+  },
+  {
+    "id": "p8g1mx3a",
+    "newPost": false,
+    "user": "rizky hasanuddin",
+    "avatar": "/avatar-rizky-hasanuddin.webp",
+    "activity": "sent you a private message",
+    "referalPost": "",
+    "referalGroup": "",
+    "privateMsg": true,
+    "privateText": "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.",
+    "timestamp": "5 days ago"
+  },
+  {
+    "id": "t3fap2gi",
+    "newPost": false,
+    "user": "kimberly smith",
+    "avatar": "/avatar-kimberly-smith.webp",
+    "activity": "commented on your picture",
+    "referalPost": "",
+    "referalGroup": "",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "1 week ago"
+  },
+  {
+    "id": "xtw9ewix",
+    "newPost": false,
+    "user": "nathan peterson",
+    "avatar": "/avatar-nathan-peterson.webp",
+    "activity": "reacted to your recent post",
+    "referalPost": "5 end-game strategies to increase your win rate",
+    "referalGroup": "",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "2 weeks ago"
+  },
+  {
+    "id": "4r16azqo",
+    "newPost": false,
+    "user": "anna kim",
+    "avatar": "/avatar-anna-kim.webp",
+    "activity": "left the group",
+    "referalPost": "",
+    "referalGroup": "Chess Club",
+    "privateMsg": false,
+    "privateText": "",
+    "timestamp": "2 weeks ago"
+  }
+]
