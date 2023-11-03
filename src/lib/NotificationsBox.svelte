@@ -14,13 +14,13 @@
   const handleItemClick = (item: { newPost: boolean }) => {
     if (item.newPost && !clickedItems.has(item)) {
       clickedItems.add(item);
-      notificationCount = notificationCount - 1; // Decrease the notification count if item.newPost is true and it hasn't been clicked before
+      notificationCount = notificationCount - 1;
     }
   };
 
   const handleMarkAllClick = () => {
-    notificationCount = 0; // Reset notificationCount to 0
-    clickedItems.clear(); // Clear the clicked items when marking all as read
+    notificationCount = 0;
+    clickedItems.clear();
   };
 
   $: console.log(notificationCount);
@@ -43,9 +43,9 @@
         on:click={() => handleItemClick(item)}
         class={`flex flex-row gap-3 items-start px-5 py-[18px] ${
           clickedItems.has(item)
-            ? "bg-white rounded-lg" // Background red for clicked items
+            ? "bg-white rounded-lg"
             : item.newPost && notificationCount > 0
-            ? "bg-[#F7FAFD] rounded-lg"
+            ? "bg-[#F7FAFD] rounded-lg cursor-pointer"
             : null
         }`}
       >
