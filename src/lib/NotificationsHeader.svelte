@@ -1,7 +1,17 @@
 <script lang="ts">
+  // Improts
+
+  import Data from "./../Data.json";
+
+  // Props
+
   export let title: string;
   export let markAll: string;
   export let notificationCount: number;
+
+  function handleMarkAllClick() {
+    notificationCount = 0;
+  }
 </script>
 
 <main
@@ -15,11 +25,14 @@
       class="text-white font-extrabold leading-normal py-[1px] px-[11px] bg-[#0A327B] rounded-md"
     >
       {notificationCount}
+      <!-- {notificationCount} -->
     </div>
   </div>
   <h2
     class="text-base font-medium leading-normal text-[#5E6778] cursor-pointer hover:text-[#0A327B] transition-all duration-300"
   >
-    {markAll}
+    <button on:click={handleMarkAllClick}>
+      {markAll}
+    </button>
   </h2>
 </main>
