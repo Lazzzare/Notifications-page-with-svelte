@@ -1,7 +1,8 @@
 <script lang="ts">
   import NotificationsBox from "./lib/NotificationsBox.svelte";
+  import Data from "./Data.json";
 
-  let notificationCount = 3;
+  let notificationCount = Data.filter((item) => item.newPost).length;
 </script>
 
 <main
