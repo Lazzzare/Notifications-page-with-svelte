@@ -17,7 +17,9 @@
       {notificationCount}
     </div>
   </div>
-  <h2 class="text-sm font-medium leading-normal text-[#5E6778] cursor-pointer">
+  <h2
+    class="text-base font-medium leading-normal text-[#5E6778] cursor-pointer hover:text-[#0A327B] transition-all duration-300"
+  >
     {markAll}
   </h2>
 </main>

@@ -10,36 +10,37 @@
   export let notificationCount: number;
 </script>
 
-<main class="box bg-white w-[730px] rounded-none md:rounded-2xl">
+<main class="box bg-white rounded-none md:rounded-2xl">
   <!-- Props -->
   <NotificationsHeader {title} {markAll} {notificationCount} />
   <!-- Notification Comments -->
-  <div class="flex flex-col gap-[10px] px-[30px]">
+  <div class="flex flex-col gap-[8px] px-[30px]">
     {#each Data as item}
       <div
-        class={`p-4 flex flex-row items-center rounded-lg gap-3 ${
-          item.newPost ? "bg-[#F7FAFD]" : null
+        class={`flex flex-row gap-3 items-start px-5 py-[18px] ${
+          item.newPost ? "bg-[#F7FAFD] rounded-lg" : null
         }`}
       >
-        <img
-          src={item.avatar}
-          alt={`${item.user} image`}
-          class="w-10 md:w-12"
-        />
-        <div class="flex flex-col">
-          <div class="flex flex-row gap-[6px]">
-            <p class="text-sm font-extrabold text-[#1C202B] leading-normal">
+        <div>
+          <img src={item.avatar} alt={`${item.user} image`} class="w-12 h-12" />
+        </div>
+        <div class={`flex flex-col`}>
+          <h1 class="flex items-center flex-row gap-1">
+            <strong
+              class="text-base font-extrabold leading-normal hover:text-[#0A327B] transition-all duration-300 cursor-pointer"
+            >
               {item.user}
-            </p>
-            <p class="text-[#5E6778] text-sm font-medium leading-normal inline">
+            </strong>
+            <p class="text-[#5E6778] text-base font-medium">
               {item.activity}
             </p>
-            <p class="font-bold text-[#5E6778] text-sm leading-normal inline">
+            <p class="text-[#5E6778] text-base font-extrabold">
               {item.referalPost}
             </p>
-            <p>{item.referalGroup}</p>
+            <p class="text-[#0A327B] text-base font-extrabold leading-normal">
+              {item.referalGroup}
+            </p>
             {#if item.newPost}
-              <!-- <div class="text-[#F65552] w-2 h-2 rounded-full"></div> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
@@ -50,13 +51,19 @@
                 <circle cx="4" cy="4" r="4" fill="#F65552" />
               </svg>
             {/if}
-          </div>
-          <p class="text-sm text-[#939CAD] font-medium leading-normal">
-            {item.timestamp}
-          </p>
+          </h1>
+          <span class="text-[#939CAD] text-base font-medium leading-normal"
+            >{item.timestamp}</span
+          >
           {#if item.privateText}
-            <div class="border-[1px] border-[#DDE7EE] rounded-md bg-white">
-              <p class="p-5">{item?.privateText}</p>
+            <div
+              class="mt-3 hover:bg-[#E5EFFA] transition-all duration-300 cursor-pointer"
+            >
+              <p
+                class="w-[526px] p-5 rounded-lg border border-[#DDE7EE] hover:text-[#5E6778] transition-all duration-300"
+              >
+                {item.privateText}
+              </p>
             </div>
           {/if}
         </div>
