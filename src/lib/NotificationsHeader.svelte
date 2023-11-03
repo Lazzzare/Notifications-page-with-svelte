@@ -8,10 +8,7 @@
   export let title: string;
   export let markAll: string;
   export let notificationCount: number;
-
-  function handleMarkAllClick() {
-    notificationCount = 0;
-  }
+  export let handleMarkAllClick: () => void;
 </script>
 
 <main

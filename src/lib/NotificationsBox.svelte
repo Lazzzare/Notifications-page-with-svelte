@@ -3,29 +3,50 @@
   import NotificationsHeader from "./NotificationsHeader.svelte";
   import Data from "./../Data.json";
 
-  //   Props
+  // Props
   export let title: string;
   export let markAll: string;
   export let notificationCount: number;
 
   // States
-  const decreaseNotificationsCount = () => {
-    notificationCount = notificationCount - 1;
+  let clickedItems = new Set();
+
+  const handleItemClick = (item: { newPost: boolean }) => {
+    if (item.newPost && !clickedItems.has(item)) {
+      clickedItems.add(item);
+      notificationCount = notificationCount - 1; // Decrease the notification count if item.newPost is true and it hasn't been clicked before
+    }
   };
+
+  const handleMarkAllClick = () => {
+    notificationCount = 0; // Reset notificationCount to 0
+    clickedItems.clear(); // Clear the clicked items when marking all as read
+  };
+
+  $: console.log(notificationCount);
 </script>
 
 <main class="box bg-white rounded-none md:rounded-2xl">
   <!-- Props -->
-  <NotificationsHeader {title} {markAll} {notificationCount} />
+  <NotificationsHeader
+    {title}
+    {markAll}
+    {notificationCount}
+    {handleMarkAllClick}
+  />
   <!-- Notification Comments -->
   <div class="flex flex-col gap-[8px] px-[30px]">
     {#each Data as item}
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
-        on:click={decreaseNotificationsCount}
+        on:click={() => handleItemClick(item)}
         class={`flex flex-row gap-3 items-start px-5 py-[18px] ${
-          item.newPost ? "bg-[#F7FAFD] rounded-lg" : null
+          clickedItems.has(item)
+            ? "bg-white rounded-lg" // Background red for clicked items
+            : item.newPost && notificationCount > 0
+            ? "bg-[#F7FAFD] rounded-lg"
+            : null
         }`}
       >
         <div>
