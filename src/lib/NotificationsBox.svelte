@@ -2,12 +2,16 @@
   // Imports
   import NotificationsHeader from "./NotificationsHeader.svelte";
   import Data from "./../Data.json";
-  console.log(Data);
 
   //   Props
   export let title: string;
   export let markAll: string;
   export let notificationCount: number;
+
+  // States
+  const decreaseNotificationsCount = () => {
+    notificationCount = notificationCount - 1;
+  };
 </script>
 
 <main class="box bg-white rounded-none md:rounded-2xl">
@@ -16,7 +20,10 @@
   <!-- Notification Comments -->
   <div class="flex flex-col gap-[8px] px-[30px]">
     {#each Data as item}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
+        on:click={decreaseNotificationsCount}
         class={`flex flex-row gap-3 items-start px-5 py-[18px] ${
           item.newPost ? "bg-[#F7FAFD] rounded-lg" : null
         }`}
