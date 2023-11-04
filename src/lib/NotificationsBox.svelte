@@ -45,7 +45,7 @@
           clickedItems.has(item)
             ? "bg-white rounded-lg"
             : item.newPost && notificationCount > 0
-            ? "bg-[#F7FAFD] rounded-lg cursor-pointer"
+            ? "bg-[#eff5fb] rounded-lg cursor-pointer"
             : null
         }`}
       >
@@ -68,22 +68,11 @@
             <p class="text-[#0A327B] text-base font-extrabold leading-normal">
               {item.referalGroup}
             </p>
-            {#if item.newPost}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-              >
-                <circle cx="4" cy="4" r="4" fill="#F65552" />
-              </svg>
-            {/if}
           </h1>
           <span class="text-[#939CAD] text-base font-medium leading-normal"
             >{item.timestamp}</span
           >
-          {#if item.privateText}
+          {#if item.privateText && clickedItems.has(item)}
             <div
               class="mt-3 hover:bg-[#E5EFFA] transition-all duration-300 cursor-pointer"
             >
